@@ -1,6 +1,195 @@
 <!doctype html>
-<html>
-  <body>
-    BuildingDNA
-  </body>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BuildingDNA</title>
+<meta name="description" content="BuildingDNA (Building Data Network Architype) is an initiative to create an open, machine-readable structure for building information." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  .split {
+    display: flex;
+    min-height: 100vh;
+  }
+  .panel {
+    padding: 64px 56px;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    margin: 0 0 20px;
+  }
+
+  /* Left: dark panel */
+  .dark {
+    flex: 0 0 42%;
+    color: #f4f1ea;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .dark::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background-image: url("https://images.unsplash.com/photo-1769921595480-32e28eb1c155?w=1200&q=80");
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(0.55) saturate(0.9);
+    transform: scale(1.05);
+    z-index: 0;
+  }
+  .dark::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 20, 26, 0.6), rgba(15, 20, 26, 0.78));
+    z-index: 1;
+  }
+  .dark > div {
+    position: relative;
+    z-index: 2;
+  }
+  .dark .eyebrow { color: #c7ccd1; }
+  .dark h1 {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    margin: 0;
+  }
+  .dark .tagline {
+    color: #d3d6da;
+    font-size: 15px;
+    margin: 0 0 6px;
+  }
+
+  /* Right: light panel */
+  .light {
+    flex: 1;
+    background: #f4efe6;
+    color: #2b2a27;
+  }
+  .light .eyebrow { color: #8c8a80; }
+  .light p { max-width: 620px; margin: 0 0 24px; }
+  .light hr {
+    border: none;
+    border-top: 1px solid #ddd6c8;
+    margin: 40px 0 32px;
+    max-width: 620px;
+  }
+  .light a {
+    color: #2b2a27;
+    text-decoration-color: #b8b6ad;
+  }
+  .light a:hover {
+    text-decoration-color: #2b2a27;
+  }
+
+  @media (max-width: 860px) {
+    .split { flex-direction: column; }
+    .dark {
+      flex: none;
+      position: static;
+      height: auto;
+      padding: 48px 24px;
+      gap: 48px;
+    }
+    .panel { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="split">
+
+    <div class="panel dark">
+      <div>
+        <p class="eyebrow">An OpenBIM Initiative</p>
+        <h1>BuildingDNA</h1>
+      </div>
+      <div>
+        <p class="tagline">Building Data Network Architype</p>
+        <p class="tagline">An open structure for BIM data</p>
+      </div>
+    </div>
+
+    <div class="panel light">
+      <p class="eyebrow">About BuildingDNA</p>
+
+      <p>
+        BuildingDNA is an initiative to create an open, machine-readable structure
+        for building information that makes BIM data easier for software,
+        automation, and AI systems to understand and use.
+      </p>
+
+      <p>
+        Today, valuable information within BIMs is often tied to particular
+        authoring platforms, schemas, and modelling practices. BuildingDNA aims to
+        transform that information into a consistent structure that combines
+        semantic information about building elements with their geometry,
+        properties, relationships, and traceable identifiers. The intention is not
+        to create another BIM authoring format, but to provide a practical data
+        layer that applications can reliably query and reason over.
+      </p>
+
+      <p>
+        By making building information computationally accessible, BuildingDNA can
+        provide a common foundation for many different applications. These could
+        include automated building code and regulatory checking, design quality
+        assurance, model auditing, information validation, energy and
+        sustainability workflows, digital permitting, facility management, and AI
+        agents that need to answer questions about a building. Instead of every
+        application developing its own method of extracting and interpreting BIM
+        data, BuildingDNA is intended to provide a reusable foundation on which
+        those applications can be built.
+      </p>
+
+      <p>
+        One of the first applications being developed on top of BuildingDNA is
+        "BuildingDNA Verifier", an AI assisted building compliance verification
+        system. The distinction is important: BuildingDNA is the underlying
+        building data structure, while BuildingDNA Verifier is an application that
+        uses that structure together with semantic querying, geometry reasoning,
+        and regulatory interpretation.
+      </p>
+
+      <p>
+        BuildingDNA is being initiated by
+        <a href="https://www.pyramooninnovations.com/" target="_blank" rel="noopener">Pyramoon Innovations</a>
+        and supported by
+        <a href="https://bimbc.com/" target="_blank" rel="noopener">BIMbc</a>,
+        as part of a broader effort to advance practical digital transformation
+        and AI readiness in the building industry.
+      </p>
+
+      <hr />
+
+      <p class="eyebrow">Contact</p>
+      <p><a href="mailto:hello@pyramooninnovations.com">hello@pyramooninnovations.com</a></p>
+    </div>
+
+  </div>
+
+</body>
 </html>
