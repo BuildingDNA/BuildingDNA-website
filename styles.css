@@ -28,7 +28,7 @@ body {
 
 /* Left: dark panel */
 .dark {
-  flex: 0 0 42%;
+  flex: 0 0 35%;
   color: #f4f1ea;
   display: flex;
   flex-direction: column;
@@ -83,7 +83,7 @@ body {
   color: #2b2a27;
 }
 .light .eyebrow { color: #8c8a80; }
-.light p { max-width: 620px; margin: 0 0 24px; }
+.light p { /*max-width: 620px;*/ margin: 0 0 24px; }
 .light hr {
   border: none;
   border-top: 1px solid #ddd6c8;
